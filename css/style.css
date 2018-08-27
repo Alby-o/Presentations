@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color: #eee1ff;
+    background-image: linear-gradient(#FFF, #eee1ff);
+    border-bottom: 3px solid #b29ad2;
+    padding: 40px;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 1.8em;
+}
+
+header h1, header h2 {
+    font-weight: 500;
+}
+
+main {
+    margin: 20px;
+}
+
+ul {
+    padding-left: 40px;
+}
