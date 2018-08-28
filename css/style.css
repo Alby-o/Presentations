@@ -5,19 +5,20 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+    background-color: #e9ebee;
 }
 
 header {
-    background-color: #eee1ff;
-    background-image: linear-gradient(#FFF, #eee1ff);
-    border-bottom: 3px solid #b29ad2;
+    background-color: #00429a;
+    border-bottom: 2px solid #aeaeae;
     padding: 40px;
-    font-family: 'Luckiest Guy', cursive;
     font-size: 1.8em;
+    color: #fff;
 }
 
-header h1, header h2 {
+header h1, header h2, article h3 {
     font-weight: 500;
+    font-family: 'Luckiest Guy', cursive;
 }
 
 main {
@@ -27,3 +28,23 @@ main {
 ul {
     padding-left: 40px;
 }
+
+article {
+    border: 1px solid #dddfe2;;
+    border-radius: 5px;
+    overflow: hidden;
+    background: white;
+}
+
+article h3 {
+    padding: 15px 20px 10px 20px;
+    background: #f5f6f7;
+    border-bottom: 1px solid #e9ebee;
+}
+
+.article-body {
+    padding: 20px;
+
+}
+
+/* */
