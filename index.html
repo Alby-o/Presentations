@@ -1,28 +1,75 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <title>Presentation Master</title>
-        <link rel="stylesheet" href="css/style.css">
-        <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
-        <meta charset="utf-8">
-    </head>
-    <body>
-        <header>
-            <h1>Presentation Master:</h1>
-            <h2>Store presentations and do other stuff</h2>
-        </header>
 
-        <main>
-            <article>
-                <h3>To do:</h3>
-                <div class="article-body">
-                    <ul>
-                        <li>Come up with an order for the presentations (randomised most likely)</li>
-                        <li>Decide if we want to have some kind of prizes as peoples choice (voting on posters perhaps)</li>
-                        <li>Set up a time keeping system for presentations</li>
-                    </ul>
-                </div>
-            </article>
-        </main>
-    </body>
+<head>
+    <title>Presentation Master</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <header>
+        <h1>Presentation Master:</h1>
+        <h2>Store presentations and do other stuff</h2>
+    </header>
+
+    <main>
+        <article>
+            <h3>To do:</h3>
+            <div class="article-body">
+                <ul>
+                    <li>Come up with an order for the presentations (randomised most likely)</li>
+                    <li>Decide if we want to have some kind of prizes as peoples choice (voting on posters perhaps)</li>
+                    <li>Set up a time keeping system for presentations</li>
+                </ul>
+            </div>
+        </article>
+
+        <article>
+            <h3>Add new groups</h3>
+            <div class="article-body">
+                <form id="group-input">
+                    <section class="group template">
+                        <div class="input-container">
+                            <label>Group Letter</label>
+                            <select class="letter">
+                                <option>A</option>
+                                <option>B</option>
+                                <option>C</option>
+                                <option>D</option>
+                                <option>E</option>
+                                <option>F</option>
+                                <option>G</option>
+                                <option>H</option>
+                                <option>I</option>
+                                <option>J</option>
+                                <option>K</option>
+                                <option>L</option>
+                                <option>M</option>
+                                <option>N</option>
+                            </select>
+                        </div>
+                        <div class="input-container group-name">
+                            <label>Group Name</label>
+                            <input class="name" type="text" placeholder="Group Name">
+                        </div>
+                        <div class="input-container group-name">
+                            <label>Poster URL</label>
+                            <input class="poster" type="text" placeholder="www.poster.com/poster.jpg">
+                            <button class="remove">Remove</button>
+                        </div>
+                    </section>
+                    <div class="button-container">
+                        <button id="add-group">+ Add Another Group</button>
+                        <button id="confirm">&#10004; Confirm</button>
+                    </div>
+                </form>
+            </div>
+        </article>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
 </html>
