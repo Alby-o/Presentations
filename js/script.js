@@ -76,10 +76,11 @@ function presentNextGroup() {
 
     articleBody.append($("<img>").attr("src", group.poster));
     articleBody.append($("<p>").attr("id", "counter"));
+    articleBody.append($("<button>").text("Present Next Group").addClass("next"));
 
     $("main").append(article);    
     
-    countdown(2);
+    countdown(0.5);
 }
 
 // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
@@ -130,6 +131,8 @@ function countdown(minutes) {
             clearInterval(x);
 
             $("#counter").addClass("time-out").text("TIME OUT");
+            $("img").attr("src", "img/horn.png")
+            document.getElementById("horn").play();
         }
     }, 1000);
 }

@@ -151,7 +151,7 @@ button:hover {
     color: red;
 }
 
-.template {
+.template, #horn {
     display: none;
 }
 
