@@ -74,13 +74,13 @@ function presentNextGroup() {
     var articleBody = $("<div>").addClass("article-body");
     article.append(articleBody);
 
-    articleBody.append($("<img>").attr("src", group.poster));
+    articleBody.append($("<div>").addClass("img-container").append($("<img>").attr("src", group.poster)));
     articleBody.append($("<p>").attr("id", "counter"));
     articleBody.append($("<button>").text("Present Next Group").addClass("next"));
 
     $("main").append(article);    
     
-    countdown(0.5);
+    countdown(0.2);
 }
 
 // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
@@ -107,6 +107,8 @@ function shuffle(array) {
 function countdown(minutes) {
     // Set the date we're counting down to
 
+    var firsthorn = false;
+
     var currentDate = new Date().getTime();
     var countDownDate = new Date(currentDate + minutes*60000);
 
@@ -126,12 +128,17 @@ function countdown(minutes) {
         // Display the result in the element with id="demo"
         document.getElementById("counter").innerHTML = minutes + "m " + seconds + "s ";
 
+        if (!firsthorn && minutes < 1) {
+            document.getElementById("shorthorn").play();
+            firsthorn = true;
+        }
+
         // If the count down is finished, write some text 
         if (distance < 0) {
             clearInterval(x);
 
             $("#counter").addClass("time-out").text("TIME OUT");
-            $("img").attr("src", "img/horn.png")
+            $("img").attr("src", "img/horn.png").addClass("horn");
             document.getElementById("horn").play();
         }
     }, 1000);
