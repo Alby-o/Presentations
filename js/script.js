@@ -121,6 +121,7 @@ function countdown(minutes) {
     // Set the date we're counting down to
 
     var firsthorn = false;
+    var flashing = false;
 
     var currentDate = new Date().getTime();
     var countDownDate = new Date(currentDate + minutes*60000);
@@ -146,11 +147,15 @@ function countdown(minutes) {
             firsthorn = true;
         }
 
+        if(!flashing && minutes < 1 && seconds < 16) {
+            $("#counter").addClass("warning");
+        }
+
         // If the count down is finished, write some text 
         if (distance < 0) {
             clearInterval(x);
 
-            $("#counter").addClass("time-out").text("TIME OUT");
+            $("#counter").removeClass("warning").addClass("time-out").text("TIME OUT");
             $("img").attr("src", "img/horn.png").addClass("horn");
             document.getElementById("horn").play();
         }
