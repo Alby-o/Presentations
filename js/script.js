@@ -64,7 +64,9 @@ function displayOrder() {
         articleBody.append(group);
     }
 
-    if (!allPresented) {
+    if (allPresented) {
+        articleBody.append($("<p>").text("WOOP WOOP ALL DONESIES").addClass("done"));
+    } else {
         articleBody.append($("<button>").text("Present Next Group").addClass("next"));
     }
     $("main").append(article);
