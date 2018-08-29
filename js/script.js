@@ -1,5 +1,7 @@
 var groups = [];
 
+var x;
+
 $(document).ready(function() {
     addNewGroup();
 });
@@ -39,6 +41,7 @@ $("main").on("click", ".next", function() {
 
 $("main").on("click", ".continue", function() {
     $(this).parent().parent().remove();
+    clearInterval(x);
     displayOrder();
 });
 
@@ -88,7 +91,7 @@ function presentNextGroup() {
     article.append(articleBody);
 
     articleBody.append($("<div>").addClass("img-container").append($("<img>").attr("src", group.poster)));
-    articleBody.append($("<p>").attr("id", "counter"));
+    articleBody.append($("<p>").attr("id", "counter").text("loading"));
     articleBody.append($("<button>").text("Continue").addClass("continue"));
 
     $("main").append(article);    
@@ -127,7 +130,7 @@ function countdown(minutes) {
     var countDownDate = new Date(currentDate + minutes*60000);
 
     // Update the count down every 1 second
-    var x = setInterval(function() {
+    x = setInterval(function() {
 
         // Get todays date and time
         var now = new Date().getTime();
