@@ -142,7 +142,7 @@ function countdown(minutes) {
         // Display the result in the element with id="demo"
         document.getElementById("counter").innerHTML = minutes + "m " + seconds + "s ";
 
-        if (!firsthorn && minutes < 1) {
+        if (!firsthorn && minutes == 1 && seconds < 1) {
             document.getElementById("shorthorn").play();
             firsthorn = true;
         }
