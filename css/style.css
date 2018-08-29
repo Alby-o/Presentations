@@ -22,7 +22,7 @@
     0% {
         transform:scale(1);
     }
-    
+
     50% {
         transform:scale(2);
     }
@@ -48,6 +48,10 @@ header {
 header h1, header h2, article h3 {
     font-weight: 500;
     font-family: 'Luckiest Guy', cursive;
+}
+
+h2 {
+    font-size: 0.8em;
 }
 
 main {
