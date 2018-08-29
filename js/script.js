@@ -147,7 +147,7 @@ function countdown(minutes) {
             firsthorn = true;
         }
 
-        if(!flashing && minutes < 1 && seconds < 16) {
+        if(!flashing && minutes < 1 && seconds < 31) {
             $("#counter").addClass("warning");
         }
 
