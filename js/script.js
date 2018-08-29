@@ -37,12 +37,19 @@ $("main").on("click", ".next", function() {
     presentNextGroup();
 });
 
+$("main").on("click", ".continue", function() {
+    $(this).parent().parent().remove();
+    displayOrder();
+});
+
 function addNewGroup() {
     var group = $(".group.template").clone().removeClass("template");
     $(".button-container").before(group);
 }
 
 function displayOrder() {
+    var allPresented = true;
+
     var article = $("<article>").append($("<h3>Order:</h3>"));
     var articleBody = $("<div>").addClass("article-body");
     article.append(articleBody);
@@ -51,11 +58,15 @@ function displayOrder() {
         var group = $("<p>").text(groups[i].letter + ": " + groups[i].name);
         if (groups[i].presented == true) {
             group.addClass("presented");
+        } else {
+            allPresented = false;
         }
         articleBody.append(group);
     }
 
-    articleBody.append($("<button>").text("Present Next Group").addClass("next"));
+    if (!allPresented) {
+        articleBody.append($("<button>").text("Present Next Group").addClass("next"));
+    }
     $("main").append(article);
 }
 
@@ -76,11 +87,11 @@ function presentNextGroup() {
 
     articleBody.append($("<div>").addClass("img-container").append($("<img>").attr("src", group.poster)));
     articleBody.append($("<p>").attr("id", "counter"));
-    articleBody.append($("<button>").text("Present Next Group").addClass("next"));
+    articleBody.append($("<button>").text("Continue").addClass("continue"));
 
     $("main").append(article);    
     
-    countdown(0.2);
+    countdown(5);
 }
 
 // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
